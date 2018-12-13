@@ -26,6 +26,7 @@ pub fn assert_add_messages_no_errors(result: Result<(), Vec<FluentError>>) {
 }
 
 /// Checks that the value contains the given string. Returns the string for convenience.
+#[allow(dead_code)]
 pub fn expect_string_in_value<'a>(expected: &'a str, val: &Option<FluentValue>) -> &'a str {
     let s = get_string_in_value(val);
     assert_eq!(expected, s);
@@ -33,6 +34,7 @@ pub fn expect_string_in_value<'a>(expected: &'a str, val: &Option<FluentValue>) 
 }
 
 /// Returns the string in the value, or panics if there is none
+#[allow(dead_code)]
 pub fn get_string_in_value(val: &Option<FluentValue>) -> &str {
     if let Some(FluentValue::String(ref s)) = val {
         s
